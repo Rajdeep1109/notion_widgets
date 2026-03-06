@@ -4,15 +4,23 @@
 <head>
 
 <meta charset="UTF-8">
-<title>Pomodoro</title>
+<title>Focus Timer</title>
 
 <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
+
+<div class="mode-buttons">
+
+<button class="mode active" onclick="setMode(1500,this)">Pomodoro</button>
+<button class="mode" onclick="setMode(300,this)">Short Break</button>
+<button class="mode" onclick="setMode(900,this)">Long Break</button>
+
+</div>
 
 <div class="timer" id="timer">
 25:00
@@ -29,4 +37,5 @@
 <script src="script.js"></script>
 
 </body>
+
 </html>
