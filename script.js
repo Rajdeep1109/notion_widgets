@@ -1,5 +1,6 @@
 let time = 1500
-let timerInterval = null
+let defaultTime = 1500
+let interval = null
 
 function updateDisplay(){
 
@@ -13,9 +14,9 @@ minutes + ":" + seconds.toString().padStart(2,"0")
 
 function startTimer(){
 
-if(timerInterval) return
+if(interval) return
 
-timerInterval = setInterval(function(){
+interval = setInterval(()=>{
 
 if(time > 0){
 
@@ -30,16 +31,32 @@ updateDisplay()
 
 function pauseTimer(){
 
-clearInterval(timerInterval)
-timerInterval = null
+clearInterval(interval)
+interval = null
 
 }
 
 function resetTimer(){
 
 pauseTimer()
-time = 1500
+time = defaultTime
 updateDisplay()
+
+}
+
+function setMode(newTime,button){
+
+defaultTime = newTime
+time = newTime
+
+pauseTimer()
+updateDisplay()
+
+document.querySelectorAll(".mode").forEach(btn=>{
+btn.classList.remove("active")
+})
+
+button.classList.add("active")
 
 }
 
