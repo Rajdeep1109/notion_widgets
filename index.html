@@ -1,28 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Pomodoro Timer</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Pomodoro</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
-<div class="container">
+<div class="timer-container">
 
-  <input type="file" id="bgUpload" accept="image/*">
+<div class="timer" id="timer">
+25:00
+</div>
 
-  <div class="timer">
-    <h1 id="time">25:00</h1>
-  </div>
+<div class="controls">
 
-  <div class="buttons">
-    <button onclick="startTimer()">Start</button>
-    <button onclick="pauseTimer()">Pause</button>
-    <button onclick="resetTimer()">Reset</button>
-  </div>
+<button onclick="startTimer()">Start</button>
+<button onclick="pauseTimer()">Pause</button>
+<button onclick="resetTimer()">Reset</button>
+
+</div>
 
 </div>
 
 <script src="script.js"></script>
+
 </body>
 </html>
