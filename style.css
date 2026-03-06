@@ -1,0 +1,67 @@
+body{
+
+margin:0;
+height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-family:'Roboto', sans-serif;
+
+background-image:url("FOCUS.png");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+
+}
+
+.timer-container{
+
+text-align:center;
+
+background:rgba(0,0,0,0.35);
+backdrop-filter:blur(6px);
+
+padding:40px 60px;
+
+border-radius:20px;
+
+color:white;
+
+}
+
+.timer{
+
+font-size:64px;
+font-weight:500;
+
+margin-bottom:20px;
+
+}
+
+.controls button{
+
+font-family:'Roboto', sans-serif;
+
+padding:10px 18px;
+
+margin:5px;
+
+border:none;
+border-radius:8px;
+
+background:white;
+color:black;
+
+cursor:pointer;
+
+transition:0.2s;
+
+}
+
+.controls button:hover{
+
+transform:scale(1.05);
+
+}
