@@ -5,62 +5,40 @@ height:100vh;
 
 display:flex;
 flex-direction:column;
-justify-content:center;
 align-items:center;
-gap:30px;
+justify-content:center;
 
 font-family:'Roboto',sans-serif;
 
 background-image:url("FOCUS.png");
 background-size:cover;
 background-position:center;
-background-repeat:no-repeat;
+
+color:white;
 
 }
 
-/* GLASS TIMER */
+/* MODE BUTTONS */
 
-.timer{
+.mode-buttons{
 
-font-size:72px;
-color:white;
+display:flex;
+gap:12px;
+margin-bottom:40px;
 
-padding:20px 40px;
+}
+
+.mode{
+
+padding:8px 18px;
 
 border-radius:20px;
 
-background:rgba(255,255,255,0.15);
-backdrop-filter:blur(10px);
--webkit-backdrop-filter:blur(10px);
-
-border:1px solid rgba(255,255,255,0.3);
-
-}
-
-/* BUTTON ROW */
-
-.controls{
-
-display:flex;
-gap:15px;
-
-}
-
-/* GLASS BUTTONS */
-
-button{
-
-font-family:'Roboto',sans-serif;
-
-padding:10px 20px;
-
-border-radius:12px;
-
-border:1px solid rgba(255,255,255,0.3);
+border:1px solid rgba(255,255,255,0.4);
 
 background:rgba(255,255,255,0.15);
+
 backdrop-filter:blur(10px);
--webkit-backdrop-filter:blur(10px);
 
 color:white;
 
@@ -70,8 +48,59 @@ transition:0.2s;
 
 }
 
-button:hover{
+.mode.active{
 
-background:rgba(255,255,255,0.25);
+background:#6a4bff;
+border:none;
+
+}
+
+/* TIMER */
+
+.timer{
+
+font-size:120px;
+font-weight:700;
+
+margin-bottom:30px;
+
+text-shadow:0 4px 20px rgba(0,0,0,0.4);
+
+}
+
+/* CONTROL BUTTONS */
+
+.controls{
+
+display:flex;
+gap:15px;
+
+}
+
+.controls button{
+
+padding:10px 20px;
+
+border-radius:14px;
+
+border:1px solid rgba(255,255,255,0.4);
+
+background:rgba(255,255,255,0.15);
+
+backdrop-filter:blur(10px);
+
+color:white;
+
+font-family:'Roboto',sans-serif;
+
+cursor:pointer;
+
+transition:0.2s;
+
+}
+
+.controls button:hover{
+
+background:rgba(255,255,255,0.3);
 
 }
