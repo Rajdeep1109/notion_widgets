@@ -8,13 +8,37 @@ flex-direction:column;
 align-items:center;
 justify-content:center;
 
-font-family:'Roboto',sans-serif;
+font-family:'Rock Salt',cursive;
+
+color:white;
+
+position:relative;
+overflow:hidden;
+
+}
+
+/* BLURRED BACKGROUND */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
 
 background-image:url("FOCUS.png");
+
 background-size:cover;
 background-position:center;
 
-color:white;
+filter:blur(2px); /* very slight blur */
+
+z-index:-1;
 
 }
 
@@ -24,6 +48,7 @@ color:white;
 
 display:flex;
 gap:12px;
+
 margin-bottom:40px;
 
 }
@@ -44,13 +69,14 @@ color:white;
 
 cursor:pointer;
 
-transition:0.2s;
+font-family:'Rock Salt',cursive;
 
 }
 
 .mode.active{
 
-background:#6a4bff;
+background:#3b2416; /* dark brown */
+
 border:none;
 
 }
@@ -60,19 +86,21 @@ border:none;
 .timer{
 
 font-size:120px;
-font-weight:700;
+
+font-weight:900;
 
 margin-bottom:30px;
 
-text-shadow:0 4px 20px rgba(0,0,0,0.4);
+text-shadow:0 6px 20px rgba(0,0,0,0.4);
 
 }
 
-/* CONTROL BUTTONS */
+/* CONTROLS */
 
 .controls{
 
 display:flex;
+
 gap:15px;
 
 }
@@ -91,16 +119,8 @@ backdrop-filter:blur(10px);
 
 color:white;
 
-font-family:'Roboto',sans-serif;
-
 cursor:pointer;
 
-transition:0.2s;
-
-}
-
-.controls button:hover{
-
-background:rgba(255,255,255,0.3);
+font-family:'Rock Salt',cursive;
 
 }
