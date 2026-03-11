@@ -49,7 +49,7 @@ z-index:-1;
 display:flex;
 gap:12px;
 
-margin-bottom:40px;
+margin:0 0 100px 0;
 
 }
 
@@ -85,13 +85,13 @@ border:none;
 
 .timer{
 
-font-size:120px;
+font-size:95px;
 
 font-weight:900;
 
-margin-bottom:30px;
+margin-bottom:100px;
 
-text-shadow:0 6px 20px rgba(0,0,0,0.4);
+text-shadow:0 6px 38px rgba(0,0,0,1);
 
 }
 
