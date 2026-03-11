@@ -1,63 +1,77 @@
-let time = 1500
-let defaultTime = 1500
+let duration = 1500
+let endTime = null
 let interval = null
+let paused = true
+let remaining = duration
 
-function updateDisplay(){
+function updateDisplay(seconds){
 
-let minutes = Math.floor(time / 60)
-let seconds = time % 60
+let m = Math.floor(seconds / 60)
+let s = seconds % 60
 
 document.getElementById("timer").textContent =
-minutes + ":" + seconds.toString().padStart(2,"0")
+m + ":" + s.toString().padStart(2,"0")
 
 }
 
 function startTimer(){
 
-if(interval) return
+if(!paused) return
+
+paused = false
+
+endTime = Date.now() + remaining * 1000
 
 interval = setInterval(()=>{
 
-if(time > 0){
+let secondsLeft = Math.round((endTime - Date.now())/1000)
 
-time--
-updateDisplay()
+if(secondsLeft <= 0){
+
+secondsLeft = 0
+clearInterval(interval)
+paused = true
 
 }
 
-},1000)
+remaining = secondsLeft
+
+updateDisplay(secondsLeft)
+
+},250)
 
 }
 
 function pauseTimer(){
 
+paused = true
 clearInterval(interval)
-interval = null
 
 }
 
 function resetTimer(){
 
 pauseTimer()
-time = defaultTime
-updateDisplay()
+
+remaining = duration
+
+updateDisplay(duration)
 
 }
 
-function setMode(newTime,button){
+function setMode(time,button){
 
-defaultTime = newTime
-time = newTime
+duration = time
+remaining = time
 
-pauseTimer()
-updateDisplay()
+resetTimer()
 
-document.querySelectorAll(".mode").forEach(btn=>{
-btn.classList.remove("active")
+document.querySelectorAll(".mode").forEach(b=>{
+b.classList.remove("active")
 })
 
 button.classList.add("active")
 
 }
 
-updateDisplay()
+updateDisplay(duration)
